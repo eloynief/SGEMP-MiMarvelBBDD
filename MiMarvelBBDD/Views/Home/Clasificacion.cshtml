@@ -1,0 +1,24 @@
+﻿@model List<Models.clsPersonajePuntos>
+@{
+    ViewBag.Title = "Clasificación";
+}
+
+<h2>Clasificación</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Puntuación</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personaje in Model)
+        {
+            <tr>
+                <td>@personaje.Nombre</td>
+                <td>@personaje.Puntuacion</td>
+            </tr>
+        }
+    </tbody>
+</table>

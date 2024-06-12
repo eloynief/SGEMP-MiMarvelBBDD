@@ -1,0 +1,50 @@
+﻿@model CombateMarvel.Models.CombateViewModel
+@{
+    ViewBag.Title = "Puntuar Combate";
+}
+
+<h2>Puntuar Combate</h2>
+
+<form asp-action="PuntuarCombate" method="post">
+    <div class="form-group">
+        <label for="Personaje1">Personaje 1</label>
+        <select class="form-control" id="Personaje1" name="idPersonaje1">
+            @foreach (var personaje in ViewBag.Personajes)
+            {
+                <option value="@personaje.Id">@personaje.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Puntuacion1">Puntuación</label>
+        <select class="form-control" id="Puntuacion1" name="puntuacion1">
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Personaje2">Personaje 2</label>
+        <select class="form-control" id="Personaje2" name="idPersonaje2">
+            @foreach (var personaje in ViewBag.Personajes)
+            {
+                <option value="@personaje.Id">@personaje.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Puntuacion2">Puntuación</label>
+        <select class="form-control" id="Puntuacion2" name="puntuacion2">
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar Puntuación</button>
+</form>

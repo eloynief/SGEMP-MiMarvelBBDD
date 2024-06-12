@@ -1,8 +1,6 @@
 ﻿using BL;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
-using MiMarvelBBDD.Models;
-using System.Diagnostics;
 
 namespace MiMarvelBBDD.Controllers
 {
@@ -54,7 +52,7 @@ namespace MiMarvelBBDD.Controllers
                 Puntuacion2 = puntuacion2
             };
 
-            ClaseBL.PuntuarCombate(nuevoCombate);
+            ClaseHandlerBL.PuntuarCombate(nuevoCombate);
 
             return RedirectToAction("Index");
         }
