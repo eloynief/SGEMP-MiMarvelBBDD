@@ -144,7 +144,7 @@ namespace DAL
 
                 //Creamos el comando (Creamos el comando, le pasamos la sentencia y la conexion, y lo ejecutamos)
 
-                miComando.CommandText = "SELECT * FROM personajes";
+                miComando.CommandText = "SELECT * FROM combates";
 
                 miComando.Connection = miConexion;
 
@@ -162,7 +162,7 @@ namespace DAL
                         oCombates = new claseCombate();
 
 
-
+                        //
                         oCombates.Fecha = (DateTime)miLector["Fecha"];
 
 
