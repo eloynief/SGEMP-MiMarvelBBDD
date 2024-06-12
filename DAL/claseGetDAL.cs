@@ -202,13 +202,13 @@ namespace DAL
         /// <returns></returns>
         public static List<clsPersonajePuntos> ObtenerTablaClasificaciones()
         {
-            var personajes = listaPersonajesAzure();
-            var combates = listaCombatesAzure();
-            var clasificaciones = new List<clsPersonajePuntos>();
+            List<clasePersonaje> personajes = listaPersonajesAzure();
+            List<claseCombate> combates = listaCombatesAzure();
+            List<clsPersonajePuntos> clasificaciones = new List<clsPersonajePuntos>();
 
-            foreach (var personaje in personajes)
+            foreach (clasePersonaje personaje in personajes)
             {
-                var puntuacionTotal = combates
+                int puntuacionTotal = combates
                     .Where(c => c.IdPersonaje1 == personaje.IdPersonaje || c.IdPersonaje2 == personaje.IdPersonaje)
                     .Sum(c => (c.IdPersonaje1 == personaje.IdPersonaje ? c.Puntuacion1 : 0) + (c.IdPersonaje2 == personaje.IdPersonaje ? c.Puntuacion2 : 0));
 
